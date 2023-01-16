@@ -46,4 +46,5 @@ public class WasteCollectedStatus : MonoBehaviour
             Debug.Log("Worst Scenario3");
         }
     }
+
 }

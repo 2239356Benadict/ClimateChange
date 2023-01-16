@@ -6,8 +6,6 @@ public class BinRecognition : MonoBehaviour
 {
     public GameObject[] binTargets;
 
-   
-
     public void OnTriggerEnter(Collider other)
     {
         foreach(GameObject bin in binTargets)
