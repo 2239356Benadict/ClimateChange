@@ -9,22 +9,23 @@ public class UITextControllor : MonoBehaviour
     public TextMeshProUGUI hUD_DisplayText;
     public TextMeshProUGUI hUD_ButtonText;
     public int clickCount;
-
+    public WasteCollectedStatus collectedStatus;
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
+        ButtonTextUpdate();
     }
 
 
     public void ButtonClickCOunt()
     {
         clickCount++;
-        Debug.Log(clickCount);
-        //ButtonTextUpdate();  //if the performance is low use the method here.
+ 
+        ButtonTextUpdate();  //if the performance is low use the method here.
     }
     private void Update()
     {
-        ButtonTextUpdate();
+        //ButtonTextUpdate();
     }
 
     public void ButtonTextUpdate()
@@ -32,10 +33,11 @@ public class UITextControllor : MonoBehaviour
         switch (clickCount)
         {
             case 2:
-                print("Grog SMASH!");
+                collectedStatus.WasteCollectionStatus();
                 break;
             case 1:
                 hUD_ButtonText.text = "DONE";
+                hUD_DisplayText.text = "";
                 break;
             default:
                 hUD_DisplayText.text = "check the waste collected status";

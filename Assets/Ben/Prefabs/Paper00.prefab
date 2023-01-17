@@ -533,8 +533,8 @@ GameObject:
   - component: {fileID: 234186041684941377}
   - component: {fileID: 234186041684941376}
   m_Layer: 0
-  m_Name: Plastic00
-  m_TagString: Plastic
+  m_Name: Paper00
+  m_TagString: Paper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -583,7 +583,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fb1a3178662ca1c4f95909befd01cd94, type: 2}
+  - {fileID: 2100000, guid: 3f23d94805b209941b9a20b125e50562, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

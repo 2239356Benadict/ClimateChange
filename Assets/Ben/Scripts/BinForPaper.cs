@@ -25,16 +25,18 @@ public class BinForPaper : MonoBehaviour
     {
         if (other.gameObject.tag == "Plastic")
         {
-            paperWasteCount++;
             
-            Debug.Log("Plastic waste in paper bin " + paperWasteCount);
+            Debug.Log("Plastic waste in paper bin ");
         }
         else if (other.gameObject.tag == "BioDegradable")
         {
+            
             Debug.Log("Bio in paper bin");
         }
         else if (other.gameObject.tag == "Paper")
         {
+            paperWasteCount++;
+            //PaperCollectionStatus();
             Debug.Log("Paper in paper bin");
         }
     }

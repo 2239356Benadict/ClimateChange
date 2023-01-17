@@ -22,6 +22,7 @@ public class BinForPlastic : MonoBehaviour
         if (other.gameObject.tag == "Plastic")
         {
             plasticWasteCount++;
+            //PlasticCollectionStatus();
             Debug.Log("Plastic waste in plastic bin " + plasticWasteCount);
         }
         else if (other.gameObject.tag == "BioDegradable")

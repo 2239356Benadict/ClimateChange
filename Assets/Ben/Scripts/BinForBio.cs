@@ -23,11 +23,13 @@ public class BinForBio : MonoBehaviour
     {
         if (other.gameObject.tag == "Plastic")
         {
-            bioWasteCount++;
+            
             Debug.Log("Plastic waste in bio bin "+ bioWasteCount);
         }
         else if (other.gameObject.tag == "BioDegradable")
         {
+            bioWasteCount++;
+            //BioWasteCollectionStatus();
             Debug.Log("Bio in bio bin");
         }
         else if (other.gameObject.tag == "Paper")
