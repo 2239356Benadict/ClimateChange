@@ -11,6 +11,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Benadict_Scene.unity
     guid: c346c6631bf0de649b24f0fd12b62801
+  - enabled: 1
+    path: Assets/Scenes/Benadict_Scene_Good.unity
+    guid: e73e56aa2f6d8c34abfb1ad670ae341c
+  - enabled: 1
+    path: Assets/Scenes/Benadict_Scene_Average.unity
+    guid: cb7d595fab9eb4a439c16584bc326e21
+  - enabled: 1
+    path: Assets/Scenes/Benadict_Scene_Worst.unity
+    guid: 6372ea2a6159a6947a3e81335d128475
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 0f6211d8e1897fa4aab554b4307bb0f2,
       type: 2}

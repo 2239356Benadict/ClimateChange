@@ -34,7 +34,7 @@ public class SpawnWastes : MonoBehaviour
     /// </summary>
     public void SpawnCube()
     {
-        if (numberOfWaste <= maxNumberOfWaste)
+        if (numberOfWaste < maxNumberOfWaste)
         {
             SpawnWastesRandomly();
             Vector3 position = new(Random.Range(1.0f, 3.0F), 0.5f, Random.Range(18.0F, 20.0F));

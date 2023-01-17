@@ -612,14 +612,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab84dd1c8a0437c498a2c231b67f9b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wasteObject: {fileID: 234186041684941383, guid: 08d61c83f559b8f4585669a5b1a1111e,
+  wasteObject: {fileID: 234186041684941383, guid: c19aa16f2985bfd4ab4258bc1acfc786,
     type: 3}
   wasteGOMaterial:
   - {fileID: 2100000, guid: d3835af0ac53ffa42b91e0a0396ffcc0, type: 2}
   - {fileID: 2100000, guid: fb1a3178662ca1c4f95909befd01cd94, type: 2}
   - {fileID: 2100000, guid: a494688270aa29844944f6ab1eb3dcb4, type: 2}
   numberOfWaste: 0
-  maxNumberOfWaste: 5
+  maxNumberOfWaste: 4
 --- !u!1 &18773062 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4602025962161850522, guid: 3773d0ae256dc594ea12defa93a67c26,
@@ -8505,7 +8505,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Welcome to the IslandLearn
+  m_text: Welcome to WorstScenario
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -36468,6 +36468,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Resident (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2389180552335663430, guid: 711db5adc073fb0408c2e77f4b3ecb0b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 711db5adc073fb0408c2e77f4b3ecb0b, type: 3}
 --- !u!4 &736442859 stripped
@@ -51980,7 +51985,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 5e247b3a6c4f5d34cafcba183b22bff9, type: 2}
   - {fileID: 2100000, guid: a861b127c67e5da42a842f0b0bc533de, type: 2}
   numberOfWaste: 0
-  maxNumberOfWaste: 5
+  maxNumberOfWaste: 4
 --- !u!1001 &1078312806
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54656,14 +54661,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab84dd1c8a0437c498a2c231b67f9b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wasteObject: {fileID: 234186041684941383, guid: 521f1cf3e14808d43a5921a4fffaf7b6,
+  wasteObject: {fileID: 234186041684941383, guid: c19aa16f2985bfd4ab4258bc1acfc786,
     type: 3}
   wasteGOMaterial:
   - {fileID: 2100000, guid: 1e06a302de059b8408c7c61b8d2f9863, type: 2}
   - {fileID: 2100000, guid: 3f23d94805b209941b9a20b125e50562, type: 2}
   - {fileID: 2100000, guid: fb1a3178662ca1c4f95909befd01cd94, type: 2}
   numberOfWaste: 0
-  maxNumberOfWaste: 5
+  maxNumberOfWaste: 4
 --- !u!1001 &1144347613
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59410,6 +59415,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Resident 2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2027673507230766331, guid: c7faf4fa5bdce9642878ac7b3fec378c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7faf4fa5bdce9642878ac7b3fec378c, type: 3}
@@ -85482,7 +85492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1782136706
 RectTransform:
   m_ObjectHideFlags: 0

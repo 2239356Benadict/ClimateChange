@@ -13,6 +13,10 @@ public class IntroUI : MonoBehaviour
 
     public GameObject introPanel;
 
+    private void Start()
+    {
+        ChangeText();
+    }
     public void CLickCaseCount()
     {
         _clickCount++;
@@ -23,8 +27,8 @@ public class IntroUI : MonoBehaviour
         switch (_clickCount)
         {
             default:
-                introPanelText.text = "Welcome to the IslandLearn";
-                introPanelText.text = "continue";
+                introPanelText.text = "Welcome to the IslandLearn!";
+                introPanelButtonText.text = "continue";
                 break;
             case 1:
                 introPanelText.text = "please use right controller to rotate & left controller to move around.";

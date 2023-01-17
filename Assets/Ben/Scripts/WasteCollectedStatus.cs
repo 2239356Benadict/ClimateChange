@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WasteCollectedStatus : MonoBehaviour
 {
@@ -15,11 +16,13 @@ public class WasteCollectedStatus : MonoBehaviour
         if(collectedPlasticWasteStatus.isAllPlasticwasteCollected == true && collectedBioWasteStatus.isAllBioWasteCollected == true 
             && collectedPaperWasteStatus.isAllpaperWasteCollected == true)
         {
+            SceneManager.LoadScene(1);
             Debug.Log("Good Scenario");
         }
         else if (collectedPlasticWasteStatus.isAllPlasticwasteCollected == false && collectedBioWasteStatus.isAllBioWasteCollected == false
             && collectedPaperWasteStatus.isAllpaperWasteCollected == false)
         {
+            SceneManager.LoadScene(3);
             Debug.Log("Worst Scenario");
         }
         else if (collectedPlasticWasteStatus.isAllPlasticwasteCollected == false || collectedBioWasteStatus.isAllBioWasteCollected == false
@@ -33,17 +36,20 @@ public class WasteCollectedStatus : MonoBehaviour
         if (collectedPlasticWasteStatus.isAllPlasticwasteCollected == false && collectedBioWasteStatus.isAllBioWasteCollected == false
             && collectedPaperWasteStatus.isAllpaperWasteCollected == true)
         {
-            Debug.Log("Worst Scenario1");
+            SceneManager.LoadScene(2);
+            Debug.Log("Average Scenario1");
         }
         else if (collectedPlasticWasteStatus.isAllPlasticwasteCollected == true && collectedBioWasteStatus.isAllBioWasteCollected == false
             && collectedPaperWasteStatus.isAllpaperWasteCollected == false)
         {
-            Debug.Log("Worst Scenario2");
+            SceneManager.LoadScene(2);
+            Debug.Log("Average Scenario2");
         }
         else if (collectedPlasticWasteStatus.isAllPlasticwasteCollected == false && collectedBioWasteStatus.isAllBioWasteCollected == true
             && collectedPaperWasteStatus.isAllpaperWasteCollected == false)
         {
-            Debug.Log("Worst Scenario3");
+            SceneManager.LoadScene(2);
+            Debug.Log("Average Scenario3");
         }
     }
 
