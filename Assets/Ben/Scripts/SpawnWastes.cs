@@ -9,6 +9,11 @@ public class SpawnWastes : MonoBehaviour
     public int numberOfWaste;
     public int maxNumberOfWaste;
 
+    public float min_X_Value;
+    public float max_X_Value;
+    public float min_Z_Value;
+    public float max_Z_Value;
+
 
     #region Monobehaviour Methods
     private void Update()
@@ -37,7 +42,7 @@ public class SpawnWastes : MonoBehaviour
         if (numberOfWaste < maxNumberOfWaste)
         {
             SpawnWastesRandomly();
-            Vector3 position = new(Random.Range(1.0f, 3.0F), 0.5f, Random.Range(18.0F, 20.0F));
+            Vector3 position = new(Random.Range(min_X_Value, max_X_Value), 0.4f, Random.Range(min_Z_Value, max_Z_Value));
             Instantiate(wasteObject, position, Quaternion.identity);
             Debug.Log(numberOfWaste);
         }
