@@ -13,9 +13,14 @@ public class WasteCollectedStatus : MonoBehaviour
     public GameObject averageScenario;
     public GameObject badScenario;
 
+    public GameObject endPanel;
+
     private bool plasticWasteStatus;
     private bool bioWasteStatus;
     private bool paperWasteStatus;
+
+
+
     public void WasteCollectionStatus()
     {
         if(collectedPlasticWasteStatus.isAllPlasticwasteCollected == true && collectedBioWasteStatus.isAllBioWasteCollected == true 
@@ -23,6 +28,8 @@ public class WasteCollectedStatus : MonoBehaviour
         {
             //SceneManager.LoadScene(1);
             goodScenario.SetActive(true);
+            endPanel.SetActive(true);
+
             Debug.Log("Good Scenario");
         }
         else if (collectedPlasticWasteStatus.isAllPlasticwasteCollected == false && collectedBioWasteStatus.isAllBioWasteCollected == false
@@ -30,14 +37,21 @@ public class WasteCollectedStatus : MonoBehaviour
         {
             //SceneManager.LoadScene(3);
             badScenario.SetActive(false);
+            endPanel.SetActive(true);
+
             Debug.Log("Worst Scenario");
         }
         else if (collectedPlasticWasteStatus.isAllPlasticwasteCollected == false || collectedBioWasteStatus.isAllBioWasteCollected == false
             || collectedPaperWasteStatus.isAllpaperWasteCollected == false)
         {
             AverageScenario();
+            endPanel.SetActive(true);
+
+            Debug.Log("Average Scenario");
         }
     }
+
+
     public void AverageScenario()
     {
         if (collectedPlasticWasteStatus.isAllPlasticwasteCollected == false && collectedBioWasteStatus.isAllBioWasteCollected == false

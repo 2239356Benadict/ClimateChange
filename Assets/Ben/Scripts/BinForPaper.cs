@@ -7,9 +7,11 @@ public class BinForPaper : MonoBehaviour
     [SerializeField]
     private int paperWasteCount = 0;
     public int totalPaperWasteToReceive;
+
     public bool isAllpaperWasteCollected = false;
     public bool somepaperWasteCollected = false;
     public bool noPaperWastesCollected = false;
+
     [SerializeField]
     private UITextControllor hUDTextControllor;
 
@@ -52,17 +54,20 @@ public class BinForPaper : MonoBehaviour
         if(paperWasteCount == totalPaperWasteToReceive)
         {
             isAllpaperWasteCollected = true;
+            somepaperWasteCollected = false;
             noPaperWastesCollected = false;
         }
         else if (paperWasteCount < totalPaperWasteToReceive && paperWasteCount >= (totalPaperWasteToReceive / 2))
         {
+            isAllpaperWasteCollected = false;
             somepaperWasteCollected = true;
             noPaperWastesCollected = false;
         }
         else if (paperWasteCount < (totalPaperWasteToReceive / 2))
         {
+            isAllpaperWasteCollected = false;
+            somepaperWasteCollected = false;
             noPaperWastesCollected = true;
-            noPaperWastesCollected = false;
         }
         hUDTextControllor.hUD_DisplayText.text = "Number of Paper Waste collected: " + paperWasteCount + "\n";
     }

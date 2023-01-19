@@ -6,10 +6,12 @@ public class BinForPlastic : MonoBehaviour
 {
     [SerializeField]
     private int plasticWasteCount = 0;
+
     public int totalPlastiWateToReceive;
     public bool isAllPlasticwasteCollected = false;
     public bool somePlasticwasteCollected = false;
     public bool noPlasticwasteCollected = false;
+    
     [SerializeField]
     private UITextControllor hUDTextControllor;
 
@@ -45,13 +47,19 @@ public class BinForPlastic : MonoBehaviour
         if (plasticWasteCount == totalPlastiWateToReceive)
         {
             isAllPlasticwasteCollected = true;
+            somePlasticwasteCollected = false;
+            noPlasticwasteCollected = false;
         }
         else if (plasticWasteCount < totalPlastiWateToReceive && plasticWasteCount >= (totalPlastiWateToReceive / 2))
         {
+            isAllPlasticwasteCollected = false;
             somePlasticwasteCollected = true;
+            noPlasticwasteCollected = false;
         }
         else if(plasticWasteCount < (totalPlastiWateToReceive / 2))
         {
+            isAllPlasticwasteCollected = false;
+            somePlasticwasteCollected = false;
             noPlasticwasteCollected = true;
         }
         hUDTextControllor.hUD_DisplayText.text = hUDTextControllor.hUD_DisplayText.text + "Number of Plastic Waste collected: " + plasticWasteCount + "\n";

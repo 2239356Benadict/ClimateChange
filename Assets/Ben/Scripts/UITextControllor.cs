@@ -21,12 +21,9 @@ public class UITextControllor : MonoBehaviour
     {
         clickCount++;
  
-        ButtonTextUpdate();  //if the performance is low use the method here.
+        ButtonTextUpdate();
     }
-    private void Update()
-    {
-        //ButtonTextUpdate();
-    }
+    
 
     public void ButtonTextUpdate()
     {

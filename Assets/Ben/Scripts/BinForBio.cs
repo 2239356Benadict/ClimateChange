@@ -7,9 +7,11 @@ public class BinForBio : MonoBehaviour
     [SerializeField]
     private int bioWasteCount = 0;
     public int totalBioWastetoReceive;
+
     public bool isAllBioWasteCollected = false;
     public bool someBioWasteCollected = false;
     public bool noBioWasteCollected = false;
+    
     [SerializeField]
     private UITextControllor hUDTextControllor;
 
@@ -48,13 +50,19 @@ public class BinForBio : MonoBehaviour
         if (bioWasteCount == totalBioWastetoReceive)
         {
             isAllBioWasteCollected = true;
+            someBioWasteCollected = false;
+            noBioWasteCollected = false;
         }
         else if(bioWasteCount < totalBioWastetoReceive && bioWasteCount >= (totalBioWastetoReceive/2))
         {
+            isAllBioWasteCollected = false;
             someBioWasteCollected = true;
+            noBioWasteCollected = false;
         }
         else if(bioWasteCount < (totalBioWastetoReceive / 2))
         {
+            isAllBioWasteCollected = false;
+            someBioWasteCollected = false;
             noBioWasteCollected = true;
         }
 
