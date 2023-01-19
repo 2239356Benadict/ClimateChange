@@ -11,6 +11,7 @@ TagManager:
   - Plastic
   - BioDegradable
   - Paper
+  - Water
   layers:
   - Default
   - TransparentFX

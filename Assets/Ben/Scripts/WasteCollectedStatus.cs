@@ -15,9 +15,9 @@ public class WasteCollectedStatus : MonoBehaviour
 
     public GameObject endPanel;
 
-    private bool plasticWasteStatus;
-    private bool bioWasteStatus;
-    private bool paperWasteStatus;
+    public bool goodEnvironment;
+    public bool averageEnvironment;
+    public bool badEnvironment;
 
 
 
@@ -26,6 +26,7 @@ public class WasteCollectedStatus : MonoBehaviour
         if(collectedPlasticWasteStatus.isAllPlasticwasteCollected == true && collectedBioWasteStatus.isAllBioWasteCollected == true 
             && collectedPaperWasteStatus.isAllpaperWasteCollected == true)
         {
+            goodEnvironment = true;
             //SceneManager.LoadScene(1);
             goodScenario.SetActive(true);
             endPanel.SetActive(true);
@@ -35,18 +36,18 @@ public class WasteCollectedStatus : MonoBehaviour
         else if (collectedPlasticWasteStatus.isAllPlasticwasteCollected == false && collectedBioWasteStatus.isAllBioWasteCollected == false
             && collectedPaperWasteStatus.isAllpaperWasteCollected == false)
         {
+            badEnvironment = true;
             //SceneManager.LoadScene(3);
             badScenario.SetActive(false);
             endPanel.SetActive(true);
 
             Debug.Log("Worst Scenario");
         }
-        else if (collectedPlasticWasteStatus.isAllPlasticwasteCollected == false || collectedBioWasteStatus.isAllBioWasteCollected == false
-            || collectedPaperWasteStatus.isAllpaperWasteCollected == false)
+        else
         {
             AverageScenario();
             endPanel.SetActive(true);
-
+            averageEnvironment = true;
             Debug.Log("Average Scenario");
         }
     }
@@ -77,4 +78,33 @@ public class WasteCollectedStatus : MonoBehaviour
         }
     }
 
+    public GameObject waterObject;
+    public float riseSpeed;
+    public float maxRise;
+    public float minRise;
+
+
+    private void Update()
+    {
+        WaterLevelRise();
+    }
+
+    public void WaterLevelRise()
+    {
+        if (goodEnvironment)
+        {
+            if (waterObject.transform.position.y < maxRise)
+            {
+                waterObject.transform.Translate(Vector3.up * riseSpeed * Time.deltaTime);
+            }
+        }
+        else if (averageEnvironment)
+        {
+            if (waterObject.transform.position.y < minRise)
+            {
+                waterObject.transform.Translate(Vector3.up * riseSpeed * Time.deltaTime);
+            }
+        }
+     
+    }
 }

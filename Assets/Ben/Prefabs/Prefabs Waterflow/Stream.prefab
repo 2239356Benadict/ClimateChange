@@ -4836,9 +4836,10 @@ GameObject:
   - component: {fileID: 5238570228697279503}
   - component: {fileID: 5238570228697279500}
   - component: {fileID: 4073422185907608838}
+  - component: {fileID: 5230341930411757709}
   m_Layer: 0
   m_Name: Stream
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4979,3 +4980,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c4dda1fe05abd243b32b8785d774d3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &5230341930411757709
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5238570228697279498}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.025, y: 1.6318647, z: 0.031579997}
+  m_Center: {x: 6.744253e-11, y: -0.7680762, z: -0.00000094949263}
