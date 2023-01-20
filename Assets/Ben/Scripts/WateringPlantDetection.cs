@@ -10,18 +10,36 @@ public class WateringPlantDetection : MonoBehaviour
     private void Start()
     {
         watered = false;
+        StartCoroutine(ActivateOfRain());
     }
-    public void OnTriggerStay(Collider other)
-    {
-        if(other.gameObject.tag == "Water")
-        {
-            WaterPoured();
-            crop.SetActive(true);
-        }
-    }
+    //public void OnTriggerStay(Collider other)
+    //{
+    //    if(other.gameObject.tag == "Water")
+    //    {
+    //        WaterPoured();
+    //    }
+    //}
 
-    public void WaterPoured()
+    //public void WaterPoured()
+    //{
+    //    watered = true;
+    //}
+
+    //public void Update()
+    //{
+    //    ActivateCrop();
+    //}
+    //public void ActivateCrop()
+    //{
+    //    if (watered)
+    //    {
+    //        crop.SetActive(true);
+    //    }
+    //}
+
+    IEnumerator ActivateOfRain()
     {
-        watered = true;
+        yield return new WaitForSeconds(0.5f);
+        crop.SetActive(true);
     }
 }

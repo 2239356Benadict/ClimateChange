@@ -16,10 +16,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - 'Grab Ray Ignore '
   - Water
   - UI
-  - 
+  - Body
   - 
   - 
   - 

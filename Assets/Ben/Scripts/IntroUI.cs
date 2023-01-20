@@ -27,14 +27,18 @@ public class IntroUI : MonoBehaviour
         switch (_clickCount)
         {
             default:
-                introPanelText.text = "Welcome to the IslandLearn!";
-                introPanelButtonText.text = "continue";
+                introPanelText.text = "welcome to the CLEAN!";
+                introPanelButtonText.text = "next";
                 break;
             case 1:
-                introPanelText.text = "please use right controller to rotate & left controller to move around.";
-                introPanelButtonText.text = "play";
+                introPanelText.text = "use right controller to rotate around.";
+                introPanelButtonText.text = "next";
                 break;
             case 2:
+                introPanelText.text = "use left controller to move around.";
+                introPanelButtonText.text = "play";
+                break;
+            case 3:
                 introPanel.SetActive(false);
                 break;
         }
