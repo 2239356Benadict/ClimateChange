@@ -24,7 +24,7 @@ public class BinForPlastic : MonoBehaviour
         if (other.gameObject.tag == "Plastic")
         {
             plasticWasteCount++;
-            //PlasticCollectionStatus();
+            PlasticCollectionStatus();
             Debug.Log("Plastic waste in plastic bin " + plasticWasteCount);
         }
         else if (other.gameObject.tag == "BioDegradable")
@@ -39,7 +39,7 @@ public class BinForPlastic : MonoBehaviour
 
     public void Update()
     {
-        PlasticCollectionStatus();
+        //PlasticCollectionStatus();
     }
 
     public void PlasticCollectionStatus()
@@ -63,5 +63,6 @@ public class BinForPlastic : MonoBehaviour
             noPlasticwasteCollected = true;
         }
         hUDTextControllor.hUD_DisplayText.text = hUDTextControllor.hUD_DisplayText.text + "Number of Plastic Waste collected: " + plasticWasteCount + "\n";
+        Debug.Log(hUDTextControllor.hUD_DisplayText.text);
     }
 }

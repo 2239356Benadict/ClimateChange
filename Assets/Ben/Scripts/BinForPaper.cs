@@ -38,14 +38,14 @@ public class BinForPaper : MonoBehaviour
         else if (other.gameObject.tag == "Paper")
         {
             paperWasteCount++;
-            //PaperCollectionStatus();
+            PaperCollectionStatus();
             Debug.Log("Paper in paper bin");
         }
     }
 
     public void Update()
     {
-        PaperCollectionStatus();
+        //PaperCollectionStatus();
     }
 
     public void PaperCollectionStatus()
@@ -69,6 +69,6 @@ public class BinForPaper : MonoBehaviour
             somepaperWasteCollected = false;
             noPaperWastesCollected = true;
         }
-        hUDTextControllor.hUD_DisplayText.text = "Number of Paper Waste collected: " + paperWasteCount + "\n";
+        hUDTextControllor.hUD_DisplayText.text = hUDTextControllor.hUD_DisplayText.text + "Number of Paper Waste collected: " + paperWasteCount + "\n";
     }
 }

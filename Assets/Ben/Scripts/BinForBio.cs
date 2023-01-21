@@ -31,7 +31,7 @@ public class BinForBio : MonoBehaviour
         else if (other.gameObject.tag == "BioDegradable")
         {
             bioWasteCount++;
-            //BioWasteCollectionStatus();
+            BioWasteCollectionStatus();
             Debug.Log("Bio in bio bin");
         }
         else if (other.gameObject.tag == "Paper")
@@ -42,7 +42,7 @@ public class BinForBio : MonoBehaviour
 
     public void Update()
     {
-        BioWasteCollectionStatus();
+        //BioWasteCollectionStatus();
     }
 
     public void BioWasteCollectionStatus()

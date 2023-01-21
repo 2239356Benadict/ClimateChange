@@ -13,13 +13,18 @@ public class WasteCollectedStatus : MonoBehaviour
     public GameObject averageScenario;
     public GameObject badScenario;
 
+    public GameObject entryScenario;
+
     public GameObject endPanel;
 
     public bool goodEnvironment;
     public bool averageEnvironment;
     public bool badEnvironment;
 
-
+    public GameObject waterObject;
+    public float riseSpeed;
+    public float maxRise;
+    public float minRise;
 
     public void WasteCollectionStatus()
     {
@@ -27,20 +32,19 @@ public class WasteCollectedStatus : MonoBehaviour
             && collectedPaperWasteStatus.isAllpaperWasteCollected == true)
         {
             goodEnvironment = true;
-            //SceneManager.LoadScene(1);
             goodScenario.SetActive(true);
             endPanel.SetActive(true);
-
+            entryScenario.SetActive(false);
             Debug.Log("Good Scenario");
         }
         else if (collectedPlasticWasteStatus.isAllPlasticwasteCollected == false && collectedBioWasteStatus.isAllBioWasteCollected == false
             && collectedPaperWasteStatus.isAllpaperWasteCollected == false)
         {
             badEnvironment = true;
-            //SceneManager.LoadScene(3);
-            badScenario.SetActive(false);
+            badScenario.SetActive(true);
             endPanel.SetActive(true);
-
+            entryScenario.SetActive(false);
+            Debug.Log(badScenario.activeInHierarchy);
             Debug.Log("Worst Scenario");
         }
         else
@@ -48,6 +52,7 @@ public class WasteCollectedStatus : MonoBehaviour
             AverageScenario();
             endPanel.SetActive(true);
             averageEnvironment = true;
+            entryScenario.SetActive(false);
             Debug.Log("Average Scenario");
         }
     }
@@ -58,30 +63,42 @@ public class WasteCollectedStatus : MonoBehaviour
         if (collectedPlasticWasteStatus.isAllPlasticwasteCollected == false && collectedBioWasteStatus.isAllBioWasteCollected == false
             && collectedPaperWasteStatus.isAllpaperWasteCollected == true)
         {
-            //SceneManager.LoadScene(2);
             averageScenario.SetActive(true);
             Debug.Log("Average Scenario1");
         }
         else if (collectedPlasticWasteStatus.isAllPlasticwasteCollected == true && collectedBioWasteStatus.isAllBioWasteCollected == false
             && collectedPaperWasteStatus.isAllpaperWasteCollected == false)
         {
-            //SceneManager.LoadScene(2);
             averageScenario.SetActive(true);
             Debug.Log("Average Scenario2");
         }
         else if (collectedPlasticWasteStatus.isAllPlasticwasteCollected == false && collectedBioWasteStatus.isAllBioWasteCollected == true
             && collectedPaperWasteStatus.isAllpaperWasteCollected == false)
         {
-            //SceneManager.LoadScene(2);
+            averageScenario.SetActive(true);
+            Debug.Log("Average Scenario3");
+        }
+        else if (collectedPlasticWasteStatus.isAllPlasticwasteCollected == false && collectedBioWasteStatus.isAllBioWasteCollected == true
+            && collectedPaperWasteStatus.isAllpaperWasteCollected == true)
+        {
+            averageScenario.SetActive(true);
+            Debug.Log("Average Scenario3");
+        }
+        else if (collectedPlasticWasteStatus.isAllPlasticwasteCollected == true && collectedBioWasteStatus.isAllBioWasteCollected == true
+            && collectedPaperWasteStatus.isAllpaperWasteCollected == false)
+        {
+            averageScenario.SetActive(true);
+            Debug.Log("Average Scenario3");
+        }
+        else if (collectedPlasticWasteStatus.isAllPlasticwasteCollected == true && collectedBioWasteStatus.isAllBioWasteCollected == false
+            && collectedPaperWasteStatus.isAllpaperWasteCollected == true)
+        {
             averageScenario.SetActive(true);
             Debug.Log("Average Scenario3");
         }
     }
 
-    public GameObject waterObject;
-    public float riseSpeed;
-    public float maxRise;
-    public float minRise;
+
 
 
     private void Update()

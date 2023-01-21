@@ -12,6 +12,7 @@ TagManager:
   - BioDegradable
   - Paper
   - Water
+  - Terrain
   layers:
   - Default
   - TransparentFX

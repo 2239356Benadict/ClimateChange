@@ -2374,7 +2374,7 @@ GameObject:
   - component: {fileID: 3527136808426359236}
   m_Layer: 0
   m_Name: Apple
-  m_TagString: Untagged
+  m_TagString: BioDegradable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

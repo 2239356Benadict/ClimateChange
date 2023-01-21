@@ -20,7 +20,7 @@ public class UITextControllor : MonoBehaviour
     public void ButtonClickCOunt()
     {
         clickCount++;
- 
+        Debug.Log("Click count UI Text Controller: " + clickCount);
         ButtonTextUpdate();
     }
     
@@ -31,13 +31,15 @@ public class UITextControllor : MonoBehaviour
         {
             case 2:
                 collectedStatus.WasteCollectionStatus();
+                Debug.Log("Click count UI Text Controller: " + clickCount);
+                Debug.Log("Enable Scenario!!!");
                 break;
             case 1:
                 hUD_ButtonText.text = "DONE";
-                hUD_DisplayText.text = "";
+                Debug.Log("Click count UI Text Controller: " + clickCount);
                 break;
             default:
-                hUD_DisplayText.text = "check the waste collected status";
+                hUD_DisplayText.text = "check here for the waste collected status";
                 hUD_ButtonText.text = "OK";
                 break;
         }
