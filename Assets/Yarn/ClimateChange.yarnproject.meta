@@ -10,7 +10,6 @@ ScriptedImporter:
   script: {fileID: 11500000, guid: 053561912b1654d80a424bb0696a74ae, type: 3}
   sourceScripts:
   - {fileID: 6391573757903218779, guid: 988c96d4244d32842935d711942a4c62, type: 3}
-  - {fileID: 6391573757903218779, guid: 40a24c8f88e3fc945bd766d15b833712, type: 3}
   compileErrors: []
   serializedDeclarations:
   - name: $needToUpadteID
