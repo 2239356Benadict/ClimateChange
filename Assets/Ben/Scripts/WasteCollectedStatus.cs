@@ -55,6 +55,8 @@ public class WasteCollectedStatus : MonoBehaviour
             entryScenario.SetActive(false);
             Debug.Log("Average Scenario");
         }
+
+        WaterLevelRise();
     }
 
 
@@ -103,7 +105,7 @@ public class WasteCollectedStatus : MonoBehaviour
 
     private void Update()
     {
-        WaterLevelRise();
+        //WaterLevelRise();
     }
 
     public void WaterLevelRise()
@@ -120,6 +122,13 @@ public class WasteCollectedStatus : MonoBehaviour
             if (waterObject.transform.position.y < minRise)
             {
                 waterObject.transform.Translate(Vector3.up * riseSpeed * Time.deltaTime);
+            }
+        }
+        else if (badEnvironment)
+        {
+            if (waterObject.transform.position.y < minRise)
+            {
+                waterObject.transform.Translate(Vector3.down * riseSpeed * Time.deltaTime);
             }
         }
      

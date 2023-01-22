@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
+using UnityEngine.XR.Management;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class IntroUI : MonoBehaviour
 {
@@ -10,9 +13,10 @@ public class IntroUI : MonoBehaviour
 
     public TextMeshProUGUI introPanelText;
     public TextMeshProUGUI introPanelButtonText;
-
     public GameObject introPanel;
 
+    public ContinuousMoveProviderBase continuousMoveXR;
+    public Button hudDoneButton;
     private void Start()
     {
         ChangeText();
@@ -36,9 +40,15 @@ public class IntroUI : MonoBehaviour
                 break;
             case 2:
                 introPanelText.text = "use left controller to move around.";
-                introPanelButtonText.text = "play";
+                introPanelButtonText.text = "next";
                 break;
             case 3:
+                introPanelText.text = "click on the status button on left hand.";
+                introPanelButtonText.text = "play";
+                break;
+            case 4:
+                continuousMoveXR.enabled = true;
+
                 introPanel.SetActive(false);
                 break;
         }

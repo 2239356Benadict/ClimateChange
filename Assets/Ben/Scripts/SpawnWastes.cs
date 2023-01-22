@@ -29,7 +29,8 @@ public class SpawnWastes : MonoBehaviour
         foreach(Material material in wasteGOMaterial)
         {
             int randomMaterial = Random.Range(0, wasteGOMaterial.Length);
-            wasteObject.GetComponent<Renderer>().material = wasteGOMaterial[randomMaterial];
+            //wasteObject.GetComponent<Renderer>().material = wasteGOMaterial[randomMaterial];
+            wasteObject.GetComponentInChildren<Renderer>().material = wasteGOMaterial[randomMaterial];
         }
         numberOfWaste++;
     }

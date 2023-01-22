@@ -39,7 +39,7 @@ public class UITextControllor : MonoBehaviour
                 Debug.Log("Click count UI Text Controller: " + clickCount);
                 break;
             default:
-                hUD_DisplayText.text = "check here for the waste collected status";
+                hUD_DisplayText.text = "check here for the waste collected status. once finish the collection press 'DONE' in the next screen.";
                 hUD_ButtonText.text = "OK";
                 break;
         }
