@@ -26,34 +26,43 @@ public class WasteCollectedStatus : MonoBehaviour
     public float maxRise;
     public float minRise;
 
+    public float loadScreenTime;
+
+    public LoadingScreenController loading;
+    public float fadeInDelayTime;
     public void WasteCollectionStatus()
     {
+        StartCoroutine(LoadingScreenTimer(fadeInDelayTime));
+
         if(collectedPlasticWasteStatus.isAllPlasticwasteCollected == true && collectedBioWasteStatus.isAllBioWasteCollected == true 
             && collectedPaperWasteStatus.isAllpaperWasteCollected == true)
         {
-            goodEnvironment = true;
-            goodScenario.SetActive(true);
-            endPanel.SetActive(true);
-            entryScenario.SetActive(false);
-            Debug.Log("Good Scenario");
+            StartCoroutine(LoadingGoodScenario(loadScreenTime));
+            //goodEnvironment = true;
+            //goodScenario.SetActive(true);
+            //endPanel.SetActive(true);
+            //entryScenario.SetActive(false);
+            //Debug.Log("Good Scenario");
         }
         else if (collectedPlasticWasteStatus.isAllPlasticwasteCollected == false && collectedBioWasteStatus.isAllBioWasteCollected == false
             && collectedPaperWasteStatus.isAllpaperWasteCollected == false)
         {
-            badEnvironment = true;
-            badScenario.SetActive(true);
-            endPanel.SetActive(true);
-            entryScenario.SetActive(false);
-            Debug.Log(badScenario.activeInHierarchy);
-            Debug.Log("Worst Scenario");
+            StartCoroutine(LoadingBadScenario(loadScreenTime));
+            //badEnvironment = true;
+            //badScenario.SetActive(true);
+            //endPanel.SetActive(true);
+            //entryScenario.SetActive(false);
+            //Debug.Log(badScenario.activeInHierarchy);
+            //Debug.Log("Worst Scenario");
         }
         else
         {
-            AverageScenario();
-            endPanel.SetActive(true);
-            averageEnvironment = true;
-            entryScenario.SetActive(false);
-            Debug.Log("Average Scenario");
+            StartCoroutine(LoadingAverageScenario(loadScreenTime));
+            //AverageScenario();
+            //endPanel.SetActive(true);
+            //averageEnvironment = true;
+            //entryScenario.SetActive(false);
+            //Debug.Log("Average Scenario");
         }
 
         WaterLevelRise();
@@ -100,14 +109,49 @@ public class WasteCollectedStatus : MonoBehaviour
         }
     }
 
-
-
-
-    private void Update()
+    IEnumerator LoadingScreenTimer(float fadeInDelayTime)
     {
-        //WaterLevelRise();
+        loading.FadeOut();
+        yield return null; 
     }
 
+
+    IEnumerator LoadingGoodScenario(float loadingDelayTime)
+    {
+        yield return new WaitForSeconds(loadingDelayTime);
+        goodEnvironment = true;
+        goodScenario.SetActive(true);
+        endPanel.SetActive(true);
+        entryScenario.SetActive(false);
+        yield return new WaitForSeconds(loadingDelayTime);
+        loading.FadeIn();
+        yield return null;
+    }
+    IEnumerator LoadingBadScenario(float loadingDelayTime)
+    {
+        yield return new WaitForSeconds(loadingDelayTime);
+        badEnvironment = true;
+        badScenario.SetActive(true);
+        endPanel.SetActive(true);
+        entryScenario.SetActive(false);
+        yield return new WaitForSeconds(loadingDelayTime);
+        loading.FadeIn();
+        Debug.Log(badScenario.activeInHierarchy);
+        Debug.Log("Worst Scenario");
+        yield return null;
+    }
+    IEnumerator LoadingAverageScenario(float loadingDelayTime)
+    {
+        yield return new WaitForSeconds(loadingDelayTime);
+        AverageScenario();
+        endPanel.SetActive(true);
+        averageEnvironment = true;
+        entryScenario.SetActive(false);
+        yield return new WaitForSeconds(loadingDelayTime);
+        loading.FadeIn();
+        Debug.Log("Average Scenario");
+        yield return null;
+    }
     public void WaterLevelRise()
     {
         if (goodEnvironment)

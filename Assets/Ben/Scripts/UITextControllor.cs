@@ -36,6 +36,7 @@ public class UITextControllor : MonoBehaviour
                 break;
             case 1:
                 hUD_ButtonText.text = "DONE";
+                hUD_DisplayText.text = "";
                 Debug.Log("Click count UI Text Controller: " + clickCount);
                 break;
             default:

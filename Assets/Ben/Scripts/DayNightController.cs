@@ -1,18 +1,80 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class DayNightController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Light directionalLight;
+
+    public float timerSpeed;
+    public float startHour;
+    public float sunRiseHour;
+    public float sunSetHour;
+    public TextMeshProUGUI timeText;
+    private TimeSpan sunRiseTime;
+    private TimeSpan sunSetTime;
+    private DateTime dateTime;
+
+    public Color dayAmbientLightColor;
+    public Color nightAmbientLightColor;
+
     void Start()
     {
-        
+        dateTime = DateTime.Now.Date + TimeSpan.FromHours(startHour);
+        sunRiseTime = TimeSpan.FromHours(sunRiseHour);
+        sunSetTime = TimeSpan.FromHours(sunSetHour);
     }
 
-    // Update is called once per frame
+
+
     void Update()
     {
-        
+        UpdateDayAndNight();
+        RotateSun();
+    }
+
+
+
+    private void UpdateDayAndNight()
+    {
+        dateTime = dateTime.AddSeconds(Time.deltaTime * timerSpeed);
+
+        if (timeText != null)
+        {
+            timeText.text = dateTime.ToString("HH:mm");
+        }
+    }
+
+    private void RotateSun()
+    {
+        float sunLightRotation;
+
+        if(dateTime.TimeOfDay > sunRiseTime && dateTime.TimeOfDay < sunSetTime)
+        {
+            TimeSpan sunRiseToSunSetDuration = CalculateTheTimeDifference(sunRiseTime, sunSetTime);
+            TimeSpan timeSinceSunRIse = CalculateTheTimeDifference(sunRiseTime, dateTime.TimeOfDay);
+            double percentage = timeSinceSunRIse.TotalMinutes / sunRiseToSunSetDuration.TotalMinutes;
+            sunLightRotation = Mathf.Lerp(0, 180, (float)percentage);
+        }
+        else
+        {
+            TimeSpan sunSetToSunRiseDuration = CalculateTheTimeDifference(sunSetTime, sunRiseTime);
+            TimeSpan timeSinceSunSet = CalculateTheTimeDifference(sunRiseTime, dateTime.TimeOfDay);
+            double percentge = timeSinceSunSet.TotalMinutes / sunSetToSunRiseDuration.TotalMinutes;
+            sunLightRotation = Mathf.Lerp(180, 360, (float)percentge);
+        }
+
+        directionalLight.transform.rotation = Quaternion.AngleAxis(sunLightRotation, Vector3.right);
+    }
+
+    private TimeSpan CalculateTheTimeDifference(TimeSpan fromTime, TimeSpan toTime)
+    {
+        TimeSpan timeDifference = toTime - fromTime;
+        if (timeDifference.TotalSeconds < 0)
+        {
+            timeDifference += TimeSpan.FromHours(24);
+        }
+        return timeDifference;
     }
 }
