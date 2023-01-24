@@ -1,0 +1,45 @@
+﻿title: NPCCreator
+tags:
+---
+
+===
+title: Welcome
+tag: IntroductionID
+---
+<<declare $repledGood=false>>
+<<declare $noNeedUpdate=false>>
+<<declare $toDoSteps=false>>
+<<declare $firstStep=false>>
+
+Good Morning, How do you feel? #line:0cddc87 
+//options
+-> Good #line:06a3406 
+    <<set $repledGood=true>>
+    <<jump InformTheSituation>>
+-> Bad #line:0b88bde 
+    <<<set $repliedBad=true>>
+    <<jump NoNeedOfUpdation>>
+=== 
+
+title: InformTheSituation
+tag: PresentSituation
+---
+The earth is going to be an inhabitant planet. But you can save it. #line:00e3e15 
+-> How?#line:0727af9
+    <<<set $toDoSteps=true>>
+    <<jump NextSteps>>
+===
+title: NextSteps
+tag: FirstStep
+---
+You must clean the land. Are you ready for it? #line:02a9512 
+-> Yes #line:0730dfa 
+    <<<set $firstStep=true>>
+    <<jump WhatToDo>>
+-> No #line:00aa21b 
+===
+title: WhatToDo
+tag: ToDo
+---
+Glad to hear that. You must walk around the field and collect different waste. Learn about the waste while you pick it.  Come back here once you finished. #line:0824419 
+===
