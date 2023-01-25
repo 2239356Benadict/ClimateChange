@@ -6,40 +6,61 @@ tags:
 title: Welcome
 tag: IntroductionID
 ---
-<<declare $repledGood=false>>
-<<declare $noNeedUpdate=false>>
-<<declare $toDoSteps=false>>
+<<declare $repliedGood=false>>
+<<declare $repliedBad=false>>
 <<declare $firstStep=false>>
+<<declare $notReady=false>>
 
-Good Morning, How do you feel? #line:0cddc87 
+Good Morning, How do you feel? #line:08654f8 
 //options
--> Good #line:06a3406 
-    <<set $repledGood=true>>
+-> Good  #line:0e85e87 
+    <<<set $repliedGood=true>>
     <<jump InformTheSituation>>
--> Bad #line:0b88bde 
-    <<<set $repliedBad=true>>
-    <<jump NoNeedOfUpdation>>
-=== 
+-> Bad #line:04ccfe7 
+    <<set $repliedBad=true>>
+    <<jump FeelingBad>>
+===
 
 title: InformTheSituation
 tag: PresentSituation
 ---
-The earth is going to be an inhabitant planet. But you can save it. #line:00e3e15 
--> How?#line:0727af9
-    <<<set $toDoSteps=true>>
+Glad to hear that. But the earth is going to be an inhabitant planet. But you can save it. I am here to give instructions for you. #line:0846501 
+-> How to save? #line:090095a 
+    <<jump NextSteps>>
+-> Why?#line:0588da8
+    <<jump WhyAnswer>>
+===
+title: FeelingBad
+tag: Tired
+---
+Sad to hear that. The toxic environment destroys health. You can improve the environment by doing certain activities. Are you ready for doing it? #line:0fac748 
     <<jump NextSteps>>
 ===
 title: NextSteps
 tag: FirstStep
 ---
-You must clean the land. Are you ready for it? #line:02a9512 
--> Yes #line:0730dfa 
+You must clean the land. Are you ready for it? #line:03fee1f 
+-> Yes #line:054872d 
     <<<set $firstStep=true>>
     <<jump WhatToDo>>
--> No #line:00aa21b 
+-> No #line:0f0dff6 
+    <<<set $notReady=true>>
+    <<BadScenario YarnManager>>
+    <<jump Discontinue>>
 ===
 title: WhatToDo
 tag: ToDo
 ---
-Glad to hear that. You must walk around the field and collect different waste. Learn about the waste while you pick it.  Come back here once you finished. #line:0824419 
+Good decision. You must walk around the field and collect different wastes. Learn about the waste while you pick it. Once you are done, come back here to leave the application. #line:03c9587 
+===
+title: WhyAnswer
+tag: WhyInhabitant
+---
+Poor waste management contributes to climate change and air pollution, and directly affects many ecosystems and species. Landfills, considered the last resort in the waste hierarchy, release methane, a very powerful greenhouse gas linked to climate change.  #line:08b8b00 
+    <<jump InformTheSituation>>
+===
+title: Discontinue
+tag: Quit
+---
+It is a wrong decision. You cannot survive without taking care of the earth. #line:01ab784 
 ===
