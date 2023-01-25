@@ -27,10 +27,10 @@ public class YarnOutputController : MonoBehaviour
 
         if (answerNo)
         {
-            collectedStatus.WasteCollectionStatus();
-            //badScenarioObjects.SetActive(true);
-            //entryEnvironmentObjects.SetActive(false);
-            //endPanel.SetActive(true);
+            //collectedStatus.WasteCollectionStatus();
+            badScenarioObjects.SetActive(true);
+            entryEnvironmentObjects.SetActive(false);
+            endPanel.SetActive(true);
         }
     }
 }
