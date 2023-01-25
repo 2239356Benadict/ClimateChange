@@ -1,6 +1,12 @@
+// Tested in unity editor and Oculus Quest
+// Copyright (c) TeamCharlie @swanseauniversity. All rights reserved.
+// Dated: 26/01/2023
+// This script is used to count the waste put into the bin.
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BinForBio : MonoBehaviour
 {
@@ -11,7 +17,9 @@ public class BinForBio : MonoBehaviour
     public bool isAllBioWasteCollected = false;
     public bool someBioWasteCollected = false;
     public bool noBioWasteCollected = false;
-    
+
+    public TextMeshProUGUI bioCount;
+
     [SerializeField]
     private UITextControllor hUDTextControllor;
 
@@ -31,6 +39,7 @@ public class BinForBio : MonoBehaviour
         else if (other.gameObject.tag == "BioDegradable")
         {
             bioWasteCount++;
+            bioCount.text = "number bio wastes collected: " + bioWasteCount.ToString();
             BioWasteCollectionStatus();
             Debug.Log("Bio in bio bin");
         }
@@ -66,6 +75,6 @@ public class BinForBio : MonoBehaviour
             noBioWasteCollected = true;
         }
 
-        hUDTextControllor.hUD_DisplayText.text = hUDTextControllor.hUD_DisplayText.text + "Number of Food Waste collected: " + bioWasteCount + "\n";
+        //hUDTextControllor.hUD_DisplayText.text = hUDTextControllor.hUD_DisplayText.text + "Number of Food Waste collected: " + bioWasteCount + "\n";
     }
 }

@@ -1,6 +1,12 @@
+// Tested in unity editor and Oculus Quest
+// Copyright (c) TeamCharlie @swanseauniversity. All rights reserved.
+// Dated: 26/01/2023
+// This script is used to count the waste put into the bin.
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BinForPlastic : MonoBehaviour
 {
@@ -11,6 +17,8 @@ public class BinForPlastic : MonoBehaviour
     public bool isAllPlasticwasteCollected = false;
     public bool somePlasticwasteCollected = false;
     public bool noPlasticwasteCollected = false;
+
+    public TextMeshProUGUI platicCount;
     
     [SerializeField]
     private UITextControllor hUDTextControllor;
@@ -24,6 +32,7 @@ public class BinForPlastic : MonoBehaviour
         if (other.gameObject.tag == "Plastic")
         {
             plasticWasteCount++;
+            platicCount.text = "number plastic wastes collected: " + plasticWasteCount.ToString();
             PlasticCollectionStatus();
             Debug.Log("Plastic waste in plastic bin " + plasticWasteCount);
         }
@@ -62,7 +71,6 @@ public class BinForPlastic : MonoBehaviour
             somePlasticwasteCollected = false;
             noPlasticwasteCollected = true;
         }
-        hUDTextControllor.hUD_DisplayText.text = hUDTextControllor.hUD_DisplayText.text + "Number of Plastic Waste collected: " + plasticWasteCount + "\n";
-        Debug.Log(hUDTextControllor.hUD_DisplayText.text);
+        //hUDTextControllor.hUD_DisplayText.text = hUDTextControllor.hUD_DisplayText.text + "Number of Plastic Waste collected: " + plasticWasteCount + "\n";
     }
 }

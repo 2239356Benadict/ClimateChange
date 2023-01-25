@@ -1,6 +1,12 @@
+// Tested in unity editor and Oculus Quest
+// Copyright (c) TeamCharlie @swanseauniversity. All rights reserved.
+// Dated: 26/01/2023
+// This script is used to count the waste put into the bin.
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BinForPaper : MonoBehaviour
 {
@@ -11,6 +17,8 @@ public class BinForPaper : MonoBehaviour
     public bool isAllpaperWasteCollected = false;
     public bool somepaperWasteCollected = false;
     public bool noPaperWastesCollected = false;
+
+    public TextMeshProUGUI paperCount;
 
     [SerializeField]
     private UITextControllor hUDTextControllor;
@@ -38,6 +46,7 @@ public class BinForPaper : MonoBehaviour
         else if (other.gameObject.tag == "Paper")
         {
             paperWasteCount++;
+            paperCount.text = "number paper wastes collected: " + paperWasteCount.ToString();
             PaperCollectionStatus();
             Debug.Log("Paper in paper bin");
         }
@@ -69,6 +78,6 @@ public class BinForPaper : MonoBehaviour
             somepaperWasteCollected = false;
             noPaperWastesCollected = true;
         }
-        hUDTextControllor.hUD_DisplayText.text = hUDTextControllor.hUD_DisplayText.text + "Number of Paper Waste collected: " + paperWasteCount + "\n";
+        //hUDTextControllor.hUD_DisplayText.text = hUDTextControllor.hUD_DisplayText.text + "Number of Paper Waste collected: " + paperWasteCount + "\n";
     }
 }

@@ -1,3 +1,8 @@
+// Tested in unity editor and Oculus Quest
+// Copyright (c) TeamCharlie @swanseauniversity. All rights reserved.
+// Dated: 26/01/2023
+// This script is used to check what scenario need to be loaded according to the number of wastes collected.
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

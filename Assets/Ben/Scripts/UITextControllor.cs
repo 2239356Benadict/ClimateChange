@@ -1,3 +1,8 @@
+// Tested in unity editor and Oculus Quest
+// Copyright (c) TeamCharlie @swanseauniversity. All rights reserved.
+// Dated: 26/01/2023
+// This script is used to control the intro UI and HUD UI dynamically.
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,12 +13,16 @@ public class UITextControllor : MonoBehaviour
 {
     public TextMeshProUGUI hUD_DisplayText;
     public TextMeshProUGUI hUD_ButtonText;
+    public GameObject plasticCountText;
+    public GameObject paperCountText;
+    public GameObject bioCountText;
     public int clickCount;
     public WasteCollectedStatus collectedStatus;
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
         ButtonTextUpdate();
+        
     }
 
 
@@ -30,7 +39,10 @@ public class UITextControllor : MonoBehaviour
         switch (clickCount)
         {
             case 2:
-                collectedStatus.WasteCollectionStatus();
+                plasticCountText.SetActive(true);
+                paperCountText.SetActive(true);
+                bioCountText.SetActive(true);
+                //collectedStatus.WasteCollectionStatus();
                 Debug.Log("Click count UI Text Controller: " + clickCount);
                 Debug.Log("Enable Scenario!!!");
                 break;
@@ -45,4 +57,6 @@ public class UITextControllor : MonoBehaviour
                 break;
         }
     }
+
+
 }
