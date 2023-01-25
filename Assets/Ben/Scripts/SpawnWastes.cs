@@ -45,7 +45,7 @@ public class SpawnWastes : MonoBehaviour
             SpawnWastesRandomly();
             Vector3 position = new(Random.Range(min_X_Value, max_X_Value), 0.4f, Random.Range(min_Z_Value, max_Z_Value));
             Instantiate(wasteObject, position, Quaternion.identity);
-            Debug.Log(numberOfWaste);
+            //Debug.Log(numberOfWaste);
         }
         else
         {

@@ -27,7 +27,7 @@ public class WasteCollectedStatus : MonoBehaviour
     public float minRise;
 
     public float loadScreenTime;
-
+    public Light directionalLight;
     public LoadingScreenController loading;
     public float fadeInDelayTime;
     public void WasteCollectionStatus()
@@ -123,6 +123,7 @@ public class WasteCollectedStatus : MonoBehaviour
         goodScenario.SetActive(true);
         endPanel.SetActive(true);
         entryScenario.SetActive(false);
+        directionalLight.intensity = 1;
         yield return new WaitForSeconds(loadingDelayTime);
         loading.FadeIn();
         yield return null;
@@ -134,6 +135,7 @@ public class WasteCollectedStatus : MonoBehaviour
         badScenario.SetActive(true);
         endPanel.SetActive(true);
         entryScenario.SetActive(false);
+        directionalLight.intensity = 2;
         yield return new WaitForSeconds(loadingDelayTime);
         loading.FadeIn();
         Debug.Log(badScenario.activeInHierarchy);
@@ -147,6 +149,7 @@ public class WasteCollectedStatus : MonoBehaviour
         endPanel.SetActive(true);
         averageEnvironment = true;
         entryScenario.SetActive(false);
+        directionalLight.intensity = 1.3f;
         yield return new WaitForSeconds(loadingDelayTime);
         loading.FadeIn();
         Debug.Log("Average Scenario");
