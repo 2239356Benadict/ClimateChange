@@ -41,11 +41,11 @@ tag: FirstStep
 ---
 You must clean the land. Are you ready for it? #line:03fee1f 
 -> Yes #line:054872d 
-    <<<set $firstStep=true>>
+    <<set $firstStep=true>>
     <<jump WhatToDo>>
 -> No #line:0f0dff6 
-    <<<set $notReady=true>>
-    <<BadScenario YarnManager>>
+    <<set $notReady=true>>
+    <<Bad_Scenario YarnManager>>
     <<jump Discontinue>>
 ===
 title: WhatToDo
@@ -57,7 +57,7 @@ title: WhyAnswer
 tag: WhyInhabitant
 ---
 Poor waste management contributes to climate change and air pollution, and directly affects many ecosystems and species. Landfills, considered the last resort in the waste hierarchy, release methane, a very powerful greenhouse gas linked to climate change.  #line:08b8b00 
-    <<jump InformTheSituation>>
+    <<jump NextSteps>>
 ===
 title: Discontinue
 tag: Quit

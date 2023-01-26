@@ -32,7 +32,7 @@ public class BinForPlastic : MonoBehaviour
         if (other.gameObject.tag == "Plastic")
         {
             plasticWasteCount++;
-            platicCount.text = "number plastic wastes collected: " + plasticWasteCount.ToString();
+            platicCount.text = plasticWasteCount.ToString();
             PlasticCollectionStatus();
             Debug.Log("Plastic waste in plastic bin " + plasticWasteCount);
         }

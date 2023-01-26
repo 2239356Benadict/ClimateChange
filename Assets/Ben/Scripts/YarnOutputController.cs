@@ -8,6 +8,7 @@ public class YarnOutputController : MonoBehaviour
     public GameObject badScenarioObjects;
     public GameObject entryEnvironmentObjects;
     public GameObject endPanel;
+    public GameObject hudPanel;
     public WasteCollectedStatus collectedStatus;
 
     public InMemoryVariableStorage yarnMemory;
@@ -18,18 +19,18 @@ public class YarnOutputController : MonoBehaviour
     }
 
 
-    [YarnCommand("BadScenario")]
+    [YarnCommand("Bad_Scenario")]
     public void BadScenario()
     {
         bool answerNo;
         yarnMemory.TryGetValue("$notReady", out answerNo);
-
-
+        Debug.Log(answerNo);
         if (answerNo)
         {
             //collectedStatus.WasteCollectionStatus();
             badScenarioObjects.SetActive(true);
             entryEnvironmentObjects.SetActive(false);
+            hudPanel.SetActive(false);
             endPanel.SetActive(true);
         }
     }

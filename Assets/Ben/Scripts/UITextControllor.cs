@@ -21,8 +21,7 @@ public class UITextControllor : MonoBehaviour
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
-        ButtonTextUpdate();
-        
+        ButtonTextUpdate();  
     }
 
 
@@ -38,15 +37,15 @@ public class UITextControllor : MonoBehaviour
     {
         switch (clickCount)
         {
-            case 2:
-                plasticCountText.SetActive(true);
-                paperCountText.SetActive(true);
-                bioCountText.SetActive(true);
-                //collectedStatus.WasteCollectionStatus();
+            case 2:               
+                collectedStatus.WasteCollectionStatus();
                 Debug.Log("Click count UI Text Controller: " + clickCount);
                 Debug.Log("Enable Scenario!!!");
                 break;
             case 1:
+                plasticCountText.SetActive(true);
+                paperCountText.SetActive(true);
+                bioCountText.SetActive(true);
                 hUD_ButtonText.text = "DONE";
                 hUD_DisplayText.text = "";
                 Debug.Log("Click count UI Text Controller: " + clickCount);

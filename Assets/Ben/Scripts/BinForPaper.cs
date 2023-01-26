@@ -46,7 +46,7 @@ public class BinForPaper : MonoBehaviour
         else if (other.gameObject.tag == "Paper")
         {
             paperWasteCount++;
-            paperCount.text = "number paper wastes collected: " + paperWasteCount.ToString();
+            paperCount.text = paperWasteCount.ToString();
             PaperCollectionStatus();
             Debug.Log("Paper in paper bin");
         }

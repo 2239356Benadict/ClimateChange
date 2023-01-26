@@ -129,6 +129,7 @@ public class WasteCollectedStatus : MonoBehaviour
         endPanel.SetActive(true);
         entryScenario.SetActive(false);
         directionalLight.intensity = 1;
+        WaterLevelRise();
         yield return new WaitForSeconds(loadingDelayTime);
         loading.FadeIn();
         yield return null;
@@ -141,6 +142,7 @@ public class WasteCollectedStatus : MonoBehaviour
         endPanel.SetActive(true);
         entryScenario.SetActive(false);
         directionalLight.intensity = 2;
+        WaterLevelRise();
         yield return new WaitForSeconds(loadingDelayTime);
         loading.FadeIn();
         Debug.Log(badScenario.activeInHierarchy);
@@ -155,6 +157,7 @@ public class WasteCollectedStatus : MonoBehaviour
         averageEnvironment = true;
         entryScenario.SetActive(false);
         directionalLight.intensity = 1.3f;
+        WaterLevelRise();
         yield return new WaitForSeconds(loadingDelayTime);
         loading.FadeIn();
         Debug.Log("Average Scenario");

@@ -39,7 +39,7 @@ public class BinForBio : MonoBehaviour
         else if (other.gameObject.tag == "BioDegradable")
         {
             bioWasteCount++;
-            bioCount.text = "number bio wastes collected: " + bioWasteCount.ToString();
+            bioCount.text = bioWasteCount.ToString();
             BioWasteCollectionStatus();
             Debug.Log("Bio in bio bin");
         }
