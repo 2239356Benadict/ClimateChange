@@ -4,7 +4,7 @@
  
 ### **Description**
 <p align="justify">
-Waste management is important as it saves the environment from the toxic effects of inorganic and biodegradable element present in waste. Mismanagement of waste can cause water contamination, soil erosion and air contamination. Waste can be recycled if collected and managed efficiently.
+Waste management is crucial because it protects the environment from the damaging effects of the organic and inorganic materials that are contained in waste. Waste management errors can lead to air pollution, land erosion, and water contamination. If waste is properly collected and handled, it can be recycled.
 
 ![alt text](https://github.com/2239356Benadict/Assignment1/blob/main/ScreenShot_ClimateChange/NewGoodScenario.png)
 
