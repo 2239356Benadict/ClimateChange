@@ -11,6 +11,11 @@ public class DisableXRGrab : MonoBehaviour
     {
         interactable = GetComponent<XRGrabInteractable>();
     }
+
+    /// <summary>
+    /// Once the gameobject enters the collider area of a gameobject with Lid the XR grab script disables
+    /// </summary>
+    /// <param name="other"></param>
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Lid")

@@ -1,3 +1,8 @@
+// Tested in unity editor and Oculus Quest
+// Copyright (c) TeamCharlie @swanseauniversity. All rights reserved.
+// Dated: 26/01/2023
+// This script is used to control the light for day and night effect.
+
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -46,6 +51,9 @@ public class DayNightController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Method to rotate the light according to the time.
+    /// </summary>
     private void RotateSun()
     {
         float sunLightRotation;
