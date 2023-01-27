@@ -34,7 +34,7 @@ As soon as the user enters the region, the interaction process begins.
 
 ### Video
   
-  [<img src="https://github.com/2239356Benadict/Assignment1/blob/main/ScreenShot_ClimateChange/NewAvgScenario.png" width="1000" height="" />](https://youtu.be/k_wdLfSWxVY)
+  [<img src="https://github.com/2239356Benadict/Assignment1/blob/main/ScreenShot_ClimateChange/NewAvgScenario.png" width="1000" height="" />](https://youtu.be/brgSaoTSHM8)
   
   
 ### **Credits**
