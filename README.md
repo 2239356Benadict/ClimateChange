@@ -51,6 +51,8 @@ As soon as the user enters the region, the interaction process begins.
 4.	Text to speech: https://ttsmp3.com/
 5.	Yarn Spinner: https://yarnspinner.dev/docs/unity/
 6. Unity Asset store: https://assetstore.unity.com/
+7. Tutorials: https://www.youtube.com/
+ 
 ### **Group Members**
 1.	Benadict Joseph
 2.	Dhruv Shah
