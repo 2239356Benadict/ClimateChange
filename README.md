@@ -32,7 +32,11 @@ The user can view the collected waste numbers on the head up display attached to
 The user will receive instructions on what to perform, and a consequence scenario will be loaded in response to the feedback provided by the user during interaction.
 As soon as the user enters the region, the interaction process begins. 
 
-
+### Video
+  
+  [<img src="https://github.com/2239356Benadict/Assignment1/blob/main/ScreenShot_ClimateChange/NewAvgScenario.png" width="1000" height="" />](https://youtu.be/k_wdLfSWxVY)
+  
+  
 ### **Credits**
 #### **Assets used in the project:**
 1.	3D Models: Turbosquid
