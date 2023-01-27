@@ -41,7 +41,8 @@ As soon as the user enters the region, the interaction process begins.
 #### **Assets used in the project:**
 1.	3D Models: Turbosquid
 2.	Dialogue: YarnSpinner
-5.	Sound effects: Pixabay
+3.	Sound effects: Pixabay
+4. Unity Asset store
 
 ### **References**
 1.	Sound effects: https://pixabay.com/
@@ -49,7 +50,7 @@ As soon as the user enters the region, the interaction process begins.
 3.	Audio Trimming: https://mp3cut.net/
 4.	Text to speech: https://ttsmp3.com/
 5.	Yarn Spinner: https://yarnspinner.dev/docs/unity/
-
+6. Unity Asset store: https://assetstore.unity.com/
 ### **Group Members**
 1.	Benadict Joseph
 2.	Dhruv Shah
