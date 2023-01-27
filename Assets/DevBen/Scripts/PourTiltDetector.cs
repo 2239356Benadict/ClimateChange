@@ -1,3 +1,7 @@
+// Tested in unity editor and Oculus Quest
+// Copyright (c) TeamCharlie @swanseauniversity. All rights reserved.
+// Dated: 26/01/2023
+// This script is used to calculate the rotation angle of the gameobject.
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,20 +36,20 @@ public class PourTiltDetector : MonoBehaviour
 
     public void StartPouring()
     {
-        Debug.Log("Started Pouring");
         stream = CreateWaterStream();
         stream.BeginStream();
     }
 
     public void StopPouring()
     {
+        //ends the line render animation
         stream.End();
         stream = null;
-        Debug.Log("Stop Pouring");
     }
 
     public float CalaculateTheBottleTiltAngle()
     {
+        //calculating the angle with respect to y axis
         return transform.up.y * Mathf.Rad2Deg;
     }
 

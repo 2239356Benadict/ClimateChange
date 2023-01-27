@@ -1,3 +1,7 @@
+// Tested in unity editor and Oculus Quest
+// Copyright (c) TeamCharlie @swanseauniversity. All rights reserved.
+// Dated: 26/01/2023
+// This script is used to change the text dynamically and add functions to the button game object.
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

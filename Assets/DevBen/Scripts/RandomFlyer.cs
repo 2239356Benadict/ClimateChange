@@ -1,19 +1,24 @@
-﻿using System.Collections;
+﻿// Tested in unity editor and Oculus Quest
+// Copyright (c) TeamCharlie @swanseauniversity. All rights reserved.
+// Dated: 26/01/2023
+// This script is used to move, rotate, randomize the animation of a game object.
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Animator))] // Requires animator with parameter "flySpeed" catering for 0, 1 (idle, flap)
+[RequireComponent(typeof(Animator))] // Requires animator
 [RequireComponent(typeof(Rigidbody))] // Requires Rigidbody to move around
 
 public class RandomFlyer : MonoBehaviour
 {
-    [SerializeField] float idleSpeed, turnSpeed, switchSeconds, idleRatio;
-    [SerializeField] Vector2 animSpeedMinMax, moveSpeedMinMax, changeAnimEveryFromTo, changeTargetEveryFromTo;
-    [SerializeField] Transform homeTarget, flyingTarget;
-    [SerializeField] Vector2 radiusMinMax;
-    [SerializeField] Vector2 yMinMax;
-    [SerializeField] public bool returnToBase = false;
-    [SerializeField] public float randomBaseOffset = 5, delayStart = 0f;
+    public float idleSpeed, turnSpeed, switchSeconds, idleRatio;
+    public Vector2 animSpeedMinMax, moveSpeedMinMax, changeAnimEveryFromTo, changeTargetEveryFromTo;
+    public Transform homeTarget, flyingTarget;
+    public Vector2 radiusMinMax;
+    public Vector2 yMinMax;
+    public bool returnToBase = false;
+    public float randomBaseOffset = 5, delayStart = 0f;
 
     private Animator animator;
     private Rigidbody body;

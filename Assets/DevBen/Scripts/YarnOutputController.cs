@@ -1,3 +1,7 @@
+// Tested in unity editor and Oculus Quest
+// Copyright (c) TeamCharlie @swanseauniversity. All rights reserved.
+// Dated: 26/01/2023
+// This script is used to access the yarn spinner.
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,11 +30,12 @@ public class YarnOutputController : MonoBehaviour
     public void BadScenario()
     {
         bool answerNo;
+        //get the value of the string from yarn script.
         yarnMemory.TryGetValue("$notReady", out answerNo);
         Debug.Log(answerNo);
         if (answerNo)
         {
-            //collectedStatus.WasteCollectionStatus();
+            //gameobjects are set to active and deactive state.
             badScenarioObjects.SetActive(true);
             entryEnvironmentObjects.SetActive(false);
             hudPanel.SetActive(false);
