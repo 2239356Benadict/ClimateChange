@@ -18,6 +18,7 @@ public class PourTiltDetector : MonoBehaviour
 
     private void Update()
     {
+        //checking the tilted value with the threshold value provided.
         bool pourChecking = CalaculateTheBottleTiltAngle() < pourThreshold;
 
         if(isPouring != pourChecking)
@@ -33,13 +34,17 @@ public class PourTiltDetector : MonoBehaviour
             }
         }
     }
-
+    /// <summary>
+    /// Method to start pouring animation
+    /// </summary>
     public void StartPouring()
     {
         stream = CreateWaterStream();
         stream.BeginStream();
     }
-
+    /// <summary>
+    /// Method to stop pouring animation.
+    /// </summary>
     public void StopPouring()
     {
         //ends the line render animation
@@ -59,6 +64,7 @@ public class PourTiltDetector : MonoBehaviour
     /// <returns></returns>
     public Stream CreateWaterStream()
     {
+        // spawning the stream prefab
         GameObject stream = Instantiate(streamPrefab, origin.position, Quaternion.identity, transform);
         return stream.GetComponent<Stream>();
     }

@@ -42,7 +42,7 @@ public class WasteCollectedStatus : MonoBehaviour
     public void WasteCollectionStatus()
     {
         StartCoroutine(LoadingScreenTimer(fadeInDelayTime));
-
+        // Checking the boolean values
         if(collectedPlasticWasteStatus.isAllPlasticwasteCollected == true && collectedBioWasteStatus.isAllBioWasteCollected == true 
             && collectedPaperWasteStatus.isAllpaperWasteCollected == true)
         {
@@ -70,37 +70,31 @@ public class WasteCollectedStatus : MonoBehaviour
             && collectedPaperWasteStatus.isAllpaperWasteCollected == true)
         {
             averageScenario.SetActive(true);
-            Debug.Log("Average Scenario1");
         }
         else if (collectedPlasticWasteStatus.isAllPlasticwasteCollected == true && collectedBioWasteStatus.isAllBioWasteCollected == false
             && collectedPaperWasteStatus.isAllpaperWasteCollected == false)
         {
-            averageScenario.SetActive(true);
-            Debug.Log("Average Scenario2");
+            averageScenario.SetActive(true);     
         }
         else if (collectedPlasticWasteStatus.isAllPlasticwasteCollected == false && collectedBioWasteStatus.isAllBioWasteCollected == true
             && collectedPaperWasteStatus.isAllpaperWasteCollected == false)
         {
-            averageScenario.SetActive(true);
-            Debug.Log("Average Scenario3");
+            averageScenario.SetActive(true);           
         }
         else if (collectedPlasticWasteStatus.isAllPlasticwasteCollected == false && collectedBioWasteStatus.isAllBioWasteCollected == true
             && collectedPaperWasteStatus.isAllpaperWasteCollected == true)
         {
             averageScenario.SetActive(true);
-            Debug.Log("Average Scenario3");
         }
         else if (collectedPlasticWasteStatus.isAllPlasticwasteCollected == true && collectedBioWasteStatus.isAllBioWasteCollected == true
             && collectedPaperWasteStatus.isAllpaperWasteCollected == false)
         {
             averageScenario.SetActive(true);
-            Debug.Log("Average Scenario3");
         }
         else if (collectedPlasticWasteStatus.isAllPlasticwasteCollected == true && collectedBioWasteStatus.isAllBioWasteCollected == false
             && collectedPaperWasteStatus.isAllpaperWasteCollected == true)
         {
             averageScenario.SetActive(true);
-            Debug.Log("Average Scenario3");
         }
     }
 
@@ -122,6 +116,7 @@ public class WasteCollectedStatus : MonoBehaviour
     /// <returns></returns>
     IEnumerator LoadingGoodScenario(float loadingDelayTime)
     {
+        // wait for a period of time before start.
         yield return new WaitForSeconds(loadingDelayTime);
         goodEnvironment = true;
         goodScenario.SetActive(true);
@@ -150,8 +145,6 @@ public class WasteCollectedStatus : MonoBehaviour
         WaterLevelRise();
         yield return new WaitForSeconds(loadingDelayTime);
         loading.FadeIn();
-        Debug.Log(badScenario.activeInHierarchy);
-        Debug.Log("Worst Scenario");
         yield return null;
     }
 
@@ -170,8 +163,7 @@ public class WasteCollectedStatus : MonoBehaviour
         directionalLight.intensity = 1.3f;
         WaterLevelRise();
         yield return new WaitForSeconds(loadingDelayTime);
-        loading.FadeIn();
-        
+        loading.FadeIn();        
         yield return null;
     }
 
@@ -184,6 +176,7 @@ public class WasteCollectedStatus : MonoBehaviour
         {
             if (waterObject.transform.position.y < maxRise)
             {
+                // moving the gameobject along y axis, i.e. upwards
                 waterObject.transform.Translate(Vector3.up * riseSpeed * Time.deltaTime);
             }
         }

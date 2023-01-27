@@ -11,11 +11,14 @@ public class BlurValue : MonoBehaviour
 {
     public Material eyeBlurMaterial;
 
-
+    /// <summary>
+    /// Method for reducing the alpha value of the material.
+    /// </summary>
     public void BlurToClearEffect()
     {
-
+        // assigning the material color variable
         Color alphaColor = eyeBlurMaterial.color;
+        // reducing the alpha value of the color
         alphaColor.a -= 0.1f * Time.deltaTime;
         eyeBlurMaterial.color = alphaColor;
     }

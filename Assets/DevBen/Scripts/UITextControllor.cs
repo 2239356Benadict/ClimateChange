@@ -18,8 +18,10 @@ public class UITextControllor : MonoBehaviour
     public GameObject bioCountText;
     public int clickCount;
     public WasteCollectedStatus collectedStatus;
+
     private void Start()
     {
+        // keep this game object even after another scene has loaded.
         DontDestroyOnLoad(gameObject);
         ButtonTextUpdate();  
     }
@@ -60,6 +62,4 @@ public class UITextControllor : MonoBehaviour
                 break;
         }
     }
-
-
 }

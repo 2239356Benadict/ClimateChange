@@ -15,6 +15,7 @@ public class TriggerAudio : MonoBehaviour
 
     private void Start()
     {
+        // get the audio source attached to this gameobject.
         audioToPlay = gameObject.GetComponent<AudioSource>();
     }
 
@@ -24,6 +25,7 @@ public class TriggerAudio : MonoBehaviour
     /// <param name="other"></param>
     public void OnTriggerEnter(Collider other)
     {
+        //checking the tag of other gameobject
         if(other.gameObject.tag == collidingGameObjectTag)
         {
             audioToPlay.Play();

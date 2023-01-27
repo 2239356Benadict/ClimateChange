@@ -12,9 +12,10 @@ public class PlayNPCAnimationClips : MonoBehaviour
     public Animator characterAnimator;
 
     public float repeatAfterTime;
-    // Start is called before the first frame update
+
     void Start()
     {
+        // repeating the method for a certain break time.
         InvokeRepeating("AnimationChange", 10, repeatAfterTime);
     }
 
@@ -24,12 +25,9 @@ public class PlayNPCAnimationClips : MonoBehaviour
     /// <param name="waitBefore"></param>
     public void AnimationChange()
     {
-
         int i = Random.Range(0, animationNames.Length-1);
         //Randomised integer is assigned to array of animation names.
         string animation = animationNames[i];
-
         characterAnimator.Play(animation);
-
     }
 }

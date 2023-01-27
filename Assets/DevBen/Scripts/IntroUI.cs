@@ -27,11 +27,15 @@ public class IntroUI : MonoBehaviour
     }
     public void CLickCaseCount()
     {
+        //incrementing the integer value by one.
         _clickCount++;
         ChangeText();
     }
+
+    // Method to chnage the texts dynamically according to the clickcount integer value.
     public void ChangeText()
     {
+        //switching the case state
         switch (_clickCount)
         {
             default:

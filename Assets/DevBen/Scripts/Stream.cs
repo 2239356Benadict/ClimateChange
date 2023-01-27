@@ -16,7 +16,9 @@ public class Stream : MonoBehaviour
 
     private void Awake()
     {
+        //get the linerenderer component attached to this game object.
         lineRenderer = GetComponent<LineRenderer>();
+        //get the particle system attached to the child gameobject of this gameobject.
         splashParticleSystem = GetComponentInChildren<ParticleSystem>();
     }
     private void Start()
@@ -45,7 +47,7 @@ public class Stream : MonoBehaviour
             yield return null;
         }
     }
-
+    // ending the streaming animation
     public void End()
     {
         StopCoroutine(pourRoutine);
@@ -63,7 +65,10 @@ public class Stream : MonoBehaviour
 
         Destroy(gameObject);
     }
-
+    /// <summary>
+    /// Finding the endpoint of line render withrespect to where the ray hit.
+    /// </summary>
+    /// <returns></returns>
     private Vector3 FindEndPointOfSTream()
     {
         RaycastHit hit;
@@ -91,7 +96,10 @@ public class Stream : MonoBehaviour
         Vector3 currentPosition = lineRenderer.GetPosition(index);
         return currentPosition == targetPosition;
     }
-
+    /// <summary>
+    /// activating the particle once the renderer hit a target point.
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator UpdateParticle()
     {
         while (gameObject.activeSelf)

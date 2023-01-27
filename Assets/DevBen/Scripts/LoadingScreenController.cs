@@ -17,6 +17,7 @@ public class LoadingScreenController : MonoBehaviour
     public bool fadeOnStart;
     private void Start()
     {
+        //accessing the gameobject renderer
         screenRenderer = GetComponent<Renderer>();
         if (fadeOnStart)
             FadeIn();
@@ -54,6 +55,7 @@ public class LoadingScreenController : MonoBehaviour
         {
             Color newColor1 = fadeColor;
             newColor1.a = Mathf.Lerp(alphaIn, alphaOut, timer / fadeDuration);
+            //accessing the color variable of the shader.
             screenRenderer.material.SetColor("_BaseColor", newColor1);
             timer += Time.deltaTime;
             yield return null;
@@ -62,6 +64,5 @@ public class LoadingScreenController : MonoBehaviour
         Color newColor2 = fadeColor;
         newColor2.a = alphaOut;
         screenRenderer.material.SetColor("_Color", newColor2);
-
     }
 }

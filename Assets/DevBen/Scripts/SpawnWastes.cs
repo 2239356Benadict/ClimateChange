@@ -38,7 +38,7 @@ public class SpawnWastes : MonoBehaviour
         foreach(Material material in wasteGOMaterial)
         {
             int randomMaterial = Random.Range(0, wasteGOMaterial.Length);
-            //wasteObject.GetComponent<Renderer>().material = wasteGOMaterial[randomMaterial];
+            //randomly assign the material
             wasteObject.GetComponentInChildren<Renderer>().material = wasteGOMaterial[randomMaterial];
         }
         numberOfWaste++;
@@ -52,9 +52,10 @@ public class SpawnWastes : MonoBehaviour
         if (numberOfWaste < maxNumberOfWaste)
         {
             SpawnWastesRandomly();
+            //randomising the position for given values
             Vector3 position = new(Random.Range(min_X_Value, max_X_Value), 0.4f, Random.Range(min_Z_Value, max_Z_Value));
+            //spawning the gameobject.
             Instantiate(wasteObject, position, Quaternion.identity);
-            //Debug.Log(numberOfWaste);
         }
         else
         {

@@ -8,8 +8,9 @@ using UnityEngine;
 
 public class NPCPlayAnimationOnTriggerEnter : MonoBehaviour
 {
-
     public Animator npcAnimator;
+
+
     /// <summary>
     /// Calculating distance to player on trigger enter and NPC walk towards player
     /// </summary>
