@@ -40,7 +40,7 @@ As soon as the user enters the region, the interaction process begins.
 5.	Sound effects: Pixabay
 
 ### **References**
-1.	Sound effects: https://pixabay.com/
+1.	Sound effects: https://pixabay.com/ and https://freesound.org/
 2.	3D Models: https://turbosquid.com/
 3.	Audio Trimming: https://mp3cut.net/
 4.	Text to speech: https://ttsmp3.com/
