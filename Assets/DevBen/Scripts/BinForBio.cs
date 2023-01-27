@@ -26,8 +26,8 @@ public class BinForBio : MonoBehaviour
 
     private void Start()
     {
+        //finding the object with particular tag.
         hUDTextControllor = GameObject.FindGameObjectWithTag("GameController").GetComponent<UITextControllor>();
-
     }
 
     /// <summary>
@@ -38,11 +38,11 @@ public class BinForBio : MonoBehaviour
     {
         if (other.gameObject.tag == "Plastic")
         {
-            
             Debug.Log("Plastic waste in bio bin "+ bioWasteCount);
         }
         else if (other.gameObject.tag == "BioDegradable")
         {
+            //incrementing the biowaste count.
             bioWasteCount++;
             bioCount.text = bioWasteCount.ToString();
             BioWasteCollectionStatus();
@@ -60,6 +60,7 @@ public class BinForBio : MonoBehaviour
     /// </summary>
     public void BioWasteCollectionStatus()
     {
+        //checking the integer values
         if (bioWasteCount == totalBioWastetoReceive)
         {
             isAllBioWasteCollected = true;

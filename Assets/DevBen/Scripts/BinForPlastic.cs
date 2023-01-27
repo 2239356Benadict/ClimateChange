@@ -25,6 +25,7 @@ public class BinForPlastic : MonoBehaviour
 
     private void Start()
     {
+        //finding the object with particular tag.
         hUDTextControllor = GameObject.FindGameObjectWithTag("GameController").GetComponent<UITextControllor>();
     }
 
@@ -36,6 +37,7 @@ public class BinForPlastic : MonoBehaviour
     {
         if (other.gameObject.tag == "Plastic")
         {
+            //incrementing the plastic waste count.
             plasticWasteCount++;
             platicCount.text = plasticWasteCount.ToString();
             PlasticCollectionStatus();
@@ -58,6 +60,7 @@ public class BinForPlastic : MonoBehaviour
     /// </summary>
     public void PlasticCollectionStatus()
     {
+        //checking the integer values
         if (plasticWasteCount == totalPlastiWateToReceive)
         {
             isAllPlasticwasteCollected = true;

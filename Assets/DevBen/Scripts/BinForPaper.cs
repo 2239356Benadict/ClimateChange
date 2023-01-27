@@ -26,6 +26,7 @@ public class BinForPaper : MonoBehaviour
 
     private void Start()
     {
+        //finding the object with particular tag.
         hUDTextControllor = GameObject.FindGameObjectWithTag("GameController").GetComponent<UITextControllor>();
     }
 
@@ -48,6 +49,7 @@ public class BinForPaper : MonoBehaviour
         }
         else if (other.gameObject.tag == "Paper")
         {
+            //incrementing the paper waste value
             paperWasteCount++;
             paperCount.text = paperWasteCount.ToString();
             PaperCollectionStatus();
@@ -61,7 +63,7 @@ public class BinForPaper : MonoBehaviour
     /// </summary>
     public void PaperCollectionStatus()
     {
-        
+        // checking the integer values
         if(paperWasteCount == totalPaperWasteToReceive)
         {
             isAllpaperWasteCollected = true;
