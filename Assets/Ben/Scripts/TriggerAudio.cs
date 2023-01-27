@@ -17,6 +17,11 @@ public class TriggerAudio : MonoBehaviour
     {
         audioToPlay = gameObject.GetComponent<AudioSource>();
     }
+
+    /// <summary>
+    /// Method to play audio once the user collides with other objects with a tag name.
+    /// </summary>
+    /// <param name="other"></param>
     public void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == collidingGameObjectTag)

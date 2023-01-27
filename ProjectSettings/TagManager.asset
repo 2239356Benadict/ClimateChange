@@ -14,6 +14,7 @@ TagManager:
   - Water
   - Terrain
   - NPC
+  - Lid
   layers:
   - Default
   - TransparentFX

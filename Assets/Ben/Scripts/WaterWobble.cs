@@ -1,3 +1,8 @@
+// Tested in unity editor and Oculus Quest
+// Copyright (c) TeamCharlie @swanseauniversity. All rights reserved.
+// Dated: 26/01/2023
+// This script is used to count the waste put into the bin.
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,11 +30,11 @@ public class WaterWobble : MonoBehaviour
         rend = GetComponent<Renderer>();
     }
 
-    private void Update()
-    {
-        
-    }
 
+
+    /// <summary>
+    /// Method to adjust the material from a customized shader to show liquid effect in a container.
+    /// </summary>
     public void WobbleEffect()
     {
         time += Time.deltaTime;

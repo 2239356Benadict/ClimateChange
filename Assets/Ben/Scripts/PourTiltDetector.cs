@@ -49,6 +49,10 @@ public class PourTiltDetector : MonoBehaviour
         return transform.up.y * Mathf.Rad2Deg;
     }
 
+    /// <summary>
+    /// Method to instantiate the game object prefab at the desired position.
+    /// </summary>
+    /// <returns></returns>
     public Stream CreateWaterStream()
     {
         GameObject stream = Instantiate(streamPrefab, origin.position, Quaternion.identity, transform);

@@ -204,7 +204,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5194f12cde35f214ebe159d6c34f0164, type: 2}
+  - {fileID: 2100000, guid: 3976146e6e373cd4e87dae8d00af8a1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1902,6 +1902,7 @@ GameObject:
   - component: {fileID: 3670023705741857366}
   - component: {fileID: 3670023705741857367}
   - component: {fileID: 3670023705741857364}
+  - component: {fileID: -5196090317772532968}
   m_Layer: 0
   m_Name: Apple
   m_TagString: Untagged
@@ -2081,6 +2082,19 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!114 &-5196090317772532968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3670023705741857365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afae5a318de9234ebd7e1e6fdb3e4aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: {fileID: 0}
 --- !u!1 &3670023706400744245
 GameObject:
   m_ObjectHideFlags: 0

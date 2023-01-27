@@ -27,6 +27,11 @@ public class BinForPlastic : MonoBehaviour
     {
         hUDTextControllor = GameObject.FindGameObjectWithTag("GameController").GetComponent<UITextControllor>();
     }
+
+    /// <summary>
+    /// Check the gameobject colliding with this game object.
+    /// </summary>
+    /// <param name="other"></param>
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Plastic")
@@ -46,11 +51,11 @@ public class BinForPlastic : MonoBehaviour
         }
     }
 
-    public void Update()
-    {
-        //PlasticCollectionStatus();
-    }
 
+
+    /// <summary>
+    /// Method to check the boolean according to the number of collected wastes.
+    /// </summary>
     public void PlasticCollectionStatus()
     {
         if (plasticWasteCount == totalPlastiWateToReceive)

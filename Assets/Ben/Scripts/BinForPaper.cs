@@ -30,7 +30,10 @@ public class BinForPaper : MonoBehaviour
     }
 
 
-
+    /// <summary>
+    /// Checks the gameobject colliding with this game object.
+    /// </summary>
+    /// <param name="other"></param>
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Plastic")
@@ -52,11 +55,10 @@ public class BinForPaper : MonoBehaviour
         }
     }
 
-    public void Update()
-    {
-        //PaperCollectionStatus();
-    }
 
+    /// <summary>
+    /// Method to check the boolean according to the number of waste collected.
+    /// </summary>
     public void PaperCollectionStatus()
     {
         

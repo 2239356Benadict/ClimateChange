@@ -1,12 +1,16 @@
+// Tested in unity editor and Oculus Quest
+// Copyright (c) TeamCharlie @swanseauniversity. All rights reserved.
+// Dated: 26/01/2023
+// This script is used for the to and fro movement of a gameobject.
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ArrowMovement : MonoBehaviour
 {
-    //adjust this to change speed
     public float speed;
-    //adjust this to change how high it goes
+
     public float height = 0.5f;
 
     public Vector3 pos;
@@ -20,6 +24,9 @@ public class ArrowMovement : MonoBehaviour
         ToAndFroMovement();
     }
 
+    /// <summary>
+    /// Method for the movement of game object between two points.
+    /// </summary>
     public void ToAndFroMovement()
     {
         //calculate what the new Y position will be

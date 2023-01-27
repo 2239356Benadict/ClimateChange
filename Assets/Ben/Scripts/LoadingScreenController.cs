@@ -21,11 +21,16 @@ public class LoadingScreenController : MonoBehaviour
         if (fadeOnStart)
             FadeIn();
     }
-
+    /// <summary>
+    /// Method to decrease the alpha value,
+    /// </summary>
     public void FadeIn()
     {
         Fade(1, 0);
     }
+    /// <summary>
+    /// Method to increase the alpha value.
+    /// </summary>
     public void FadeOut()
     {
         Fade(0, 1);
@@ -36,6 +41,12 @@ public class LoadingScreenController : MonoBehaviour
         StartCoroutine(FadeRoutine(alphaIn, alphaOut));
     }
 
+    /// <summary>
+    /// Coroutine to change the alpha value of a material 
+    /// </summary>
+    /// <param name="alphaIn"></param>
+    /// <param name="alphaOut"></param>
+    /// <returns></returns>
     public IEnumerator FadeRoutine(float alphaIn, float alphaOut)
     {
         float timer = 0;

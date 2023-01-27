@@ -29,6 +29,11 @@ public class BinForBio : MonoBehaviour
         hUDTextControllor = GameObject.FindGameObjectWithTag("GameController").GetComponent<UITextControllor>();
 
     }
+
+    /// <summary>
+    /// Checks the game object colliding with this game object.
+    /// </summary>
+    /// <param name="other"></param>
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Plastic")
@@ -49,11 +54,10 @@ public class BinForBio : MonoBehaviour
         }
     }
 
-    public void Update()
-    {
-        //BioWasteCollectionStatus();
-    }
 
+    /// <summary>
+    /// Method to check the boolean according to the number of wastes collected.
+    /// </summary>
     public void BioWasteCollectionStatus()
     {
         if (bioWasteCount == totalBioWastetoReceive)

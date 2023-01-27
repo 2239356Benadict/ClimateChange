@@ -18,6 +18,9 @@ public class YarnOutputController : MonoBehaviour
         BadScenario();
     }
 
+    /// <summary>
+    /// Method to check the boolean value for Badscenario to load according to the user feedback.
+    /// </summary>
 
     [YarnCommand("Bad_Scenario")]
     public void BadScenario()

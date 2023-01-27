@@ -29,6 +29,10 @@ public class SpawnWastes : MonoBehaviour
 
 
     #region Private Methods
+
+    /// <summary>
+    /// Method to spawn waste object at random position for a given range of values.
+    /// </summary>
     public void SpawnWastesRandomly()
     {
         foreach(Material material in wasteGOMaterial)

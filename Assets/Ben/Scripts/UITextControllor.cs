@@ -24,7 +24,9 @@ public class UITextControllor : MonoBehaviour
         ButtonTextUpdate();  
     }
 
-
+    /// <summary>
+    /// Method to increase the click counts.
+    /// </summary>
     public void ButtonClickCOunt()
     {
         clickCount++;
@@ -32,7 +34,9 @@ public class UITextControllor : MonoBehaviour
         ButtonTextUpdate();
     }
     
-
+    /// <summary>
+    /// Method to switch the case according to the click count.
+    /// </summary>
     public void ButtonTextUpdate()
     {
         switch (clickCount)
